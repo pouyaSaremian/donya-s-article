@@ -1,0 +1,32 @@
+# macOS
+.DS_Store
+
+# LaTeX build artifacts
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.synctex(busy)
+*.bbl
+*.blg
+*.abs
+*.nav
+*.snm
+*.vrb
+*.bcf
+*.run.xml
+
+# Downstream/vendor download junk
+cas.zip
+elsarticle.zip
+els-cas-templates/
+elsarticle/
+_extracted_imgs/
+
+# Duplicate of the golden/reference PDF
+Elsevier (1).pdf
