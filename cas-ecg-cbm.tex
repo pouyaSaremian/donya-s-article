@@ -269,7 +269,11 @@ To better understand how the proposed deep learning model makes its predictions,
 Here, $H_i(t)$ denotes the heatmap value of feature map $i$ at time $t$, and $n$ is the total number of feature maps.
 This operation produces a one-dimensional importance signal aligned with the ECG time axis. The visualizations highlight QRS complexes and P waves (Fig.~\ref{fig:reds}), while misclassified samples are examined morphologically. Fig.~\ref{fig:mileads} illustrates an example that was incorrectly classified as normal, even though it actually belongs to the MI class. Some leads, such as II, aVL, and V2, display irregular spacing between beats, which may have contributed to the model's mistake. The probabilities predicted by the model for this signal are: $[0.028784, 0.009288, 0.450851, 0.861472, 0.007335]$.
 This indicates that the model focused on regions corresponding to MI signs in some areas, but not consistently across all parts, resulting in an overall probability of about 45\%. These visualizations are intended to enhance the interpretability and clinical trustworthiness of the system, bridging the gap between automated deep learning classification and human expert reasoning.
-    \begin{figure}[!t]
+%% Column-break into the empty right column of this page so Fig.~6 sits
+%% beside the existing left-column content (ROC + Grad-CAM text), removing
+%% the former dedicated page for Fig.~6 without moving the left column.
+\newpage
+\begin{figure}[H]
     \centering
     \subfloat[I]{\includegraphics[width=0.48\columnwidth, height=2.2cm]{lead1.png}}\hfill
     \subfloat[II]{\includegraphics[width=0.48\columnwidth, height=2.2cm]{lead2.png}} \\
@@ -286,7 +290,7 @@ This indicates that the model focused on regions corresponding to MI signs in so
     \caption{Visualization of raw Grad-CAM heatmaps for the 12 leads (a--l) corresponding to a correct classification of the normal class. The blue waveform represents the filtered ECG signal. The horizontal background bands represent the individual feature map channels (32 channels) of the final convolutional layer; blue regions indicate low model activation, while brighter regions show where the model is extracting features to support its 'Normal' prediction. These raw heatmaps are later averaged to produce the one-dimensional importance signals shown in Fig.~\ref{fig:reds}.}
     \label{fig:normalleads}
 \end{figure}
-\newpage
+\clearpage
 \begin{figure*}[!t]
 \centering
 \subfloat[Lead I]{\includegraphics[width=0.48\textwidth]{reds1.png}}\hfill
